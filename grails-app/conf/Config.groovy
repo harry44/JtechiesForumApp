@@ -146,5 +146,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/videos/showPoster'       : ['permitAll'],
         '/videos/showVideo'       : ['permitAll'],
         '/blogPosts/**'       : ['permitAll'],
+        '/blogUser/**'       : ['permitAll'],
 ]
 
