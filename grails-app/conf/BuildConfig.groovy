@@ -72,6 +72,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.11.1"
         compile ':spring-security-core:2.0-RC4'
         compile ":ckeditor:4.5.4.1"
+        compile "org.grails.plugins:tiny-mce:3.4.9"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
