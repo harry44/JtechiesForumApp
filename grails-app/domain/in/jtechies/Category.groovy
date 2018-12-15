@@ -6,7 +6,7 @@ String categoryName
     byte[] categoryLogo
     String description
     CategoryGroup categoryGroup
-Date dateCreated,lastUpdated
+     Date dateCreated,lastUpdated
 
     static constraints = {
         description nullable:true

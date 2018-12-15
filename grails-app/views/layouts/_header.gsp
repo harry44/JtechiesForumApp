@@ -19,7 +19,9 @@
 
 <div class="container">
     <div class="row shadow-sm p-2  bg-white rounded">
-        <div class="col-6"><h3><a href="${request.contextPath}">Jtechies Forum</a></h3></div>
+        <div class="col-6"><h3><a href="${request.contextPath}">Jtechies Forum</a></h3>
+            <b><a href="${request.contextPath}/index">Website</a></b>
+        </div>
 
         <div class="col-6">
 

@@ -114,7 +114,11 @@
     <div class="row">
         <br> <br>
 <g:each in="${in.jtechies.Category.list()}" var="category" status="i">
+<div class="col-2">
     <img src="${createLink(controller: 'category' ,action: 'showLogo' ,id:category?.id)}" style="height:100px;border:solid 1px purple;border-radius:5px;border-left:2px solid green;margin:10px;" class="thumbnail" >
+<br><a href='${createLink(controller: "post",action:"create")}?category=${category?.id}'><i class="fa fa-plus-circle"></i>Post</a>
+    <br><a href='${createLink(controller: "category",action:"create")}'><i class="fa fa-plus-circle"></i>Category</a>
+</div>
 </g:each>
     </div>
 </div>
