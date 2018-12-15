@@ -13,7 +13,7 @@ class BlogUserController {
         params.max = Math.min(max ?: 10, 100)
         respond BlogUser.list(params), model: [blogUserInstanceCount: BlogUser.count()]
     }
-    
+
 
     def show(BlogUser blogUserInstance) {
         respond blogUserInstance

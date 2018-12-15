@@ -8,28 +8,33 @@
     <ckeditor:resources/>
     <ckeditor:config var="toolbar_Mytoolbar">
         [
-   ['Styles','Format','Font','FontSize'],
-   '/',
-   ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste','Find','Replace','-','Outdent','Indent','-','Print'],
-   '/',
+    ['Styles','Format','Font','FontSize'],
    ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-   ['Image','Table','-','Link','Flash','Smiley','TextColor','BGColor','Source']
-]
+    ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste','Find','Replace','-','Outdent','Indent','-'],
+
+
+    ['Image','Table','-','Link','Flash','Smiley','TextColor','BGColor','Source','Maximize']
+    ]
     </ckeditor:config>
 
 </head>
 
 <body>
+
 %{--<a href="#create-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>--}%
-<div class="nav nav-navbar" role="navigation">
-    <ul class="nav">
-        <li><a class="home badge badge-info" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
-        </li>
-        <li>&nbsp;</li>
-        <li><g:link class="list badge badge-info" action="index"><g:message code="default.list.label"
-                                                                            args="[entityName]"/></g:link></li>
-    </ul>
-</div>
+%{--<div class="nav nav-navbar" role="navigation">--}%
+    %{--<ul class="nav">--}%
+        %{--<li><a class="home badge badge-info" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>--}%
+        %{--</li>--}%
+        %{--<li>&nbsp;</li>--}%
+        %{--<li><g:link class="list badge badge-info" action="index"><g:message code="default.list.label"--}%
+                                                                            %{--args="[entityName]"/></g:link></li>--}%
+    %{--</ul>--}%
+%{--</div>--}%
+<jtechies:navbar>
+    <jtechies:nav name="Home" action="${request.contextPath}" icon="home"></jtechies:nav>
+    <jtechies:nav name="New ${entityName}" action="create" icon="plus-circle"></jtechies:nav>
+</jtechies:navbar>
 
 <div id="create-post" class="content scaffold-create" role="main">
 
@@ -45,10 +50,13 @@
                 <fieldset class="form">
                     <g:render template="form"/>
                 </fieldset>
+
                 <fieldset class="buttons" style="align-content: center">
-                    <g:submitButton name="create" class="save btn btn-success"
+                    <center> <g:submitButton name="create" class="save btn btn-success"
                                     value="${message(code: 'default.button.create.label', default: 'Create')}"/>
+                    </center>
                 </fieldset>
+
             </g:form>
         </div>
 

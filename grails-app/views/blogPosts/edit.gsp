@@ -16,8 +16,23 @@
         ['Image','Table','-','Link','Flash','Smiley','TextColor','BGColor','Source']
         ]
 		</ckeditor:config>
+		%{--<g:set var="editorToolbar" value="${toolbar_Mytoolbar}" scope="session"></g:set>--}%
+		%{--<tinyMce:resources />--}%
+		<tinyMce:importJs init="false"/>
+		<script>
+		tinymce.init({
+			selector: "textarea",
+			plugins: "a11ychecker, advcode, linkchecker, media mediaembed, powerpaste, tinycomments, tinydrive, tinymcespellchecker",
+
+			'toolbar': 'undo redo | styleselect | bold italic alignleft | aligncenter alignright alignjustify | outdent indent'
+
+
+		});
+	</script>
 	</head>
 	<body>
+<tinyMce:renderEditor type="simple"/>
+<tinyMce:renderEditor type="advanced" style="width:100%"/>
 		<a href="#edit-blogPosts" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
@@ -42,6 +57,7 @@
 				<g:hiddenField name="version" value="${blogPostsInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
+
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />

@@ -143,7 +143,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/tags/**'       : ['ROLE_USER', 'ROLE_ADMIN'],
         '/videos/**'       : ['ROLE_USER', 'ROLE_ADMIN'],
         '/videos/index'       : ['permitAll'],
-        '/videos/showPoster'       : ['permitAll'],
+        '/videos/showPoster'      : ['permitAll'],
         '/videos/showVideo'       : ['permitAll'],
         '/blogPosts/**'       : ['permitAll'],
         '/blogUser/**'       : ['permitAll'],
